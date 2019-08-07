@@ -9,3 +9,29 @@ h1 {
   font-style: italic;
   color: #373fff;
 }
+.block {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+.color1 {
+  color: red;
+}
+.color2 {
+  color: red;
+}
+.color3 {
+  color: red;
+}
+.color4 {
+  color: red;
+}
+.color5 {
+  color: red;
+}
+.color6 {
+  color: red;
+}
+.color7 {
+  color: red;
+}
