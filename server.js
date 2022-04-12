@@ -13,9 +13,20 @@ app.use("/assets", assets);
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
+  response.sendFile(__dirname + '/views/default.html');
 });
-
+app.get("/characters.asp", function (request, response) {
+  response.sendFile(__dirname + '/views/characters.html');  
+});
+app.get("/faq.html", function (request, response) {
+  response.sendFile(__dirname + '/views/faq.html');  
+});
+app.get("/links.html", function (request, response) {
+  response.sendFile(__dirname + '/views/links.html');  
+});
+app.get("/output.html", function (request, response) {
+  response.sendFile(__dirname + '/views/output.html');  
+});
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
