@@ -32,8 +32,10 @@ app.get("/links.html", function (request, response) {
 });
 app.get("/output.asp", function (request, response) {
   var fs = require('fs');
-  var content = fs.readFileSync('/views/output.html', 'utf8');
+  var content = fs.readFileSync('./views/output.html', 'utf8');
+  const querystring = require('querystring');
   // read variables
+  let boxa = request.query.boxa;
 
   // replace string
   
