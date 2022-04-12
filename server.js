@@ -21,6 +21,9 @@ app.get("/default.html", function (request, response) {
 app.get("/characters.asp", function (request, response) {
   response.sendFile(__dirname + '/views/characters.html');  
 });
+app.get("/input.asp", function (request, response) {
+  response.sendFile(__dirname + '/views/input.html');  
+});
 app.get("/faq.html", function (request, response) {
   response.sendFile(__dirname + '/views/faq.html');  
 });
