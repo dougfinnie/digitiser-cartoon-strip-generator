@@ -30,8 +30,16 @@ app.get("/faq.html", function (request, response) {
 app.get("/links.html", function (request, response) {
   response.sendFile(__dirname + '/views/links.html');  
 });
-app.get("/output.html", function (request, response) {
-  response.sendFile(__dirname + '/views/output.html');  
+app.get("/output.asp", function (request, response) {
+  var fs = require('fs');
+  var content = fs.readFileSync('/views/output.html', 'utf8');
+  // read variables
+
+  // replace string
+  
+  // return raw html
+  response.set('Content-Type', 'text/html');
+  response.send(Buffer.from(content));
 });
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
