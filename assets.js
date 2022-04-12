@@ -1,3 +1,11 @@
+/*
+Use relative paths to serve assets
+
+by Gareth and Emanuele Tamponi
+https://glitch.com/~assets-lib
+
+note: service requires restart after changes to assets
+*/
 var express = require('express');
 var fs = require('fs');
 

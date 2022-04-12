@@ -15,6 +15,9 @@ app.use("/assets", assets);
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/default.html');
 });
+app.get("/default.html", function (request, response) {
+  response.sendFile(__dirname + '/views/default.html');
+});
 app.get("/characters.asp", function (request, response) {
   response.sendFile(__dirname + '/views/characters.html');  
 });
