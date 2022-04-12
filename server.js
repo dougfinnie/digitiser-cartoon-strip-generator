@@ -33,12 +33,35 @@ app.get("/links.html", function (request, response) {
 app.get("/output.asp", function (request, response) {
   var fs = require('fs');
   var content = fs.readFileSync('./views/output.html', 'utf8');
-  const querystring = require('querystring');
+
   // read variables
-  let boxa = request.query.boxa;
+  let texta = request.query.texta;
+  let textb = request.query.textb;
+  let textc = request.query.textc;
+  let textd = request.query.textd;
+  let texte = request.query.texte;
+  let textf = request.query.textf;
+  let textg = request.query.textg;
+  
+  let boxa = request.query.boxa ? `<img src="/assets/${request.query.boxa}" />` : '';
+  let boxb = request.query.boxb;
+  let boxc = request.query.boxc;
+  let boxd = request.query.boxd;
+  let boxe = request.query.boxe;
+  let boxf = request.query.boxf;
+  let boxg = request.query.boxg;
 
   // replace string
+  content = texta ? content.replace("${texta}", texta) : content;
+  content = textb ? content.replace("${textb}", textb);
+  content = content.replace("${textc}", textc);
+  content = content.replace("${textd}", textd);
+  content = content.replace("${texte}", texte);
+  content = content.replace("${textf}", textf);
+  content = content.replace("${textg}", textg);
   
+  content = content.replace("${boxa}", boxa);
+
   // return raw html
   response.set('Content-Type', 'text/html');
   response.send(Buffer.from(content));
