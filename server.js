@@ -31,6 +31,7 @@ app.get("/links.html", function (request, response) {
   response.sendFile(__dirname + '/views/links.html');  
 });
 app.get("/output.asp", function (request, response) {
+  var images = require('./images')
   var fs = require('fs');
   var content = fs.readFileSync('./views/output.html', 'utf8');
 
