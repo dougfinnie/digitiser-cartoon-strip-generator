@@ -9,19 +9,19 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 // var assets = require('./assets');
 
-// Rate limiting middleware
+// Rate limiting middleware - generous limits for image-heavy site
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  max: 1000, // Limit each IP to 1000 requests per windowMs (allows for ~500 images + page loads)
   message: 'Too many requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
 });
 
-// Stricter rate limiting for the output endpoint
+// Rate limiting for the output endpoint - still limit comic generation but be reasonable
 const outputLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 10, // Limit each IP to 10 comic generations per minute
+  max: 30, // Limit each IP to 30 comic generations per minute
   message: 'Too many comic generations, please wait a minute before creating more.',
   standardHeaders: true,
   legacyHeaders: false,
