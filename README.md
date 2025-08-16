@@ -40,6 +40,14 @@ Digitiser was a daily computer game magazine that ran on Channel 4's Teletext se
 
 Feel free to submit issues, feature requests, or pull requests to improve the cartoon generator.
 
+## Who put this here?!
+
+I answered a call in Twitter (pre-Nazi era) and grabbed what I could from the Web Archive.
+
+### Why?
+
+I wanted to experiment with the brilliant Glitch.com (RIP), which allowed me to keep the entire structure of the original site, but host it in a Node app.
+
 ## License
 
 Copyright Mr Biffo, all rights reserved

@@ -5,10 +5,13 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint *.js",
-    "lint:fix": "eslint *.js --fix",
-    "format": "prettier --write *.js *.json views/*.html",
-    "format:check": "prettier --check *.js *.json views/*.html"
+    "build": "npm run copy-files",
+    "copy-files": "cp -r views/* public/ && cp -r assets public/assets",
+    "dev": "netlify dev",
+    "lint": "eslint *.js netlify/functions/*.js",
+    "lint:fix": "eslint *.js netlify/functions/*.js --fix",
+    "format": "prettier --write *.js *.json views/*.html netlify/functions/*.js",
+    "format:check": "prettier --check *.js *.json views/*.html netlify/functions/*.js"
   },
   "dependencies": {
     "express": "^4.16.2",
@@ -17,7 +20,8 @@
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "netlify-cli": "^17.0.0"
   },
   "engines": {
     "node": "22"
@@ -26,5 +30,5 @@
     "node",
     "express"
   ],
-  "license": "MIT"
+  "license": "Copyright Mr Biffo, all rights reserved"
 }
