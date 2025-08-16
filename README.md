@@ -1,37 +1,48 @@
-Welcome to Glitch
-=================
+# Digitiser Cartoon Strip Generator
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+A cartoon strip generator featuring beloved characters from the legendary Digitiser gaming magazine. Create custom comic strips with characters like Mr T, Insincere Dave, Lewis and Morse, and many more iconic figures from gaming culture's golden age.
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+## About Digitiser
 
-Find out more [about Glitch](https://glitch.com/about).
+Digitiser was a daily computer game magazine that ran on Channel 4's Teletext service from January 1993 to March 2003. Written primarily by Mr. Biffo (Paul Rose), it was renowned for its humor, wit, and unique characters that became cult favorites among gaming enthusiasts.
 
+## Features
 
-Your Project
-------------
+- **Character Selection**: Choose from a vast library of Digitiser characters
+- **Custom Text**: Add your own dialogue to create personalized comic strips
+- **Easy Interface**: Simple form-based creation process
+- **Shareable Results**: Generate unique URLs for your cartoons to share with others
+- **Character Reference**: Browse the complete character gallery with names and images
 
-### ← README.md
+## Usage
 
-That's this file, where you can tell people what your cool website does and how you built it.
+1. **Create a Comic Strip**:
+   - Navigate to the "Create" page
+   - Select characters from the dropdown menus for each panel
+   - Add dialogue text for each character
+   - Click "Create" to generate your comic strip
 
-### ← index.html
+2. **Browse Characters**:
+   - Visit the "Characters" page to see all available characters with their images and names
 
-Where you'll write the content of your website. 
+3. **Share Your Creation**:
+   - Copy the URL of your generated comic strip to share with others
+   - The URL contains all the parameters needed to recreate your comic
 
-### ← style.css
+## Related Links
 
-CSS files add styling rules to your content.
+- [Moleman's Digitiser Archive](https://web.archive.org/web/20120516055707/http://www.moleman.freeserve.co.uk/)
+- [Super Page 58](https://web.archive.org/web/20120516055707/http://www.bell101.freeserve.co.uk/)
+- [Mr Biffo's Digitiser Obituary Section](https://web.archive.org/web/20120516055707/http://www.mrbiffo.com/biffodigitiser.htm)
+- [Mr. Biffo's Website](https://web.archive.org/web/20120516055707/http://www.mrbiffo.com/)
 
-### ← script.js
+## Contributing
 
-If you're feeling fancy you can add interactivity to your site with JavaScript.
+Feel free to submit issues, feature requests, or pull requests to improve the cartoon generator.
 
-### ← assets
+## License
 
-Drag in `assets`, like images or music, to add them to your project
+Copyright Mr Biffo, all rights reserved
+---
 
-Made by [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ
+*"Now, Goodnight, everyone."* - A tribute to the wit and humor of Digitiser and Mr. Biffo's legacy in gaming culture.

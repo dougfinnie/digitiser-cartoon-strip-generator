@@ -1,16 +1,24 @@
 {
-  "name": "assets.js",
+  "name": "Digi Comic generator",
   "version": "0.0.1",
   "description": "Digi Comic generator",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": "eslint *.js",
+    "lint:fix": "eslint *.js --fix",
+    "format": "prettier --write *.js *.json views/*.html",
+    "format:check": "prettier --check *.js *.json views/*.html"
   },
   "dependencies": {
     "express": "^4.16.2"
   },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  },
   "engines": {
-    "node": "8"
+    "node": "22"
   },
   "keywords": [
     "node",
