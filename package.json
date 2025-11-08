@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "npm run copy-files",
-    "copy-files": "cp -r views/* public/ && cp -r assets public/assets",
+    "copy-files": "mkdir -p public && cp -r views/* public/ && cp -r assets public/assets",
     "dev": "netlify dev",
     "lint": "eslint *.js netlify/functions/*.js",
     "lint:fix": "eslint *.js netlify/functions/*.js --fix",
