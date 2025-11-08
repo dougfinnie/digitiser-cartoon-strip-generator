@@ -126,6 +126,10 @@ exports.handler = async (event, context) => {
     // Get template content
     let content = getTemplate();
 
+    // Generate current URL with query parameters
+    const queryString = new URLSearchParams(params).toString();
+    const currentUrl = `${event.headers.host ? 'https://' + event.headers.host : ''}/.netlify/functions/output${queryString ? '?' + queryString : ''}`;
+
     // Sanitize and validate text inputs with strict validation
     const texta = sanitizeTextInput(params.texta);
     const textb = sanitizeTextInput(params.textb);
@@ -164,6 +168,9 @@ exports.handler = async (event, context) => {
     content = content.replace('${boxf}', boxf);
     content = content.replace('${boxg}', boxg);
     content = content.replace('${boxh}', boxh);
+
+    // Replace the hardcoded URL with the current dynamic URL
+    content = content.replace('{{OUTPUT_URL}}', currentUrl);
 
     // Final XSS protection scan on the complete content
     content = sanitizeTemplateContent(content);
