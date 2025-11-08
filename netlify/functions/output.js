@@ -1,10 +1,119 @@
-const fs = require('fs');
-const path = require('path');
+// Template embedded directly in function for Netlify deployment
+const TEMPLATE = `<html>
+  <head>
+    <title>A Cartoon</title>
+  </head>
+  <body bgcolor="black" link="ff00ff" vlink="ff00ff">
+    <font color="00ff00" face="courier"
+      ><center>
+        <h1>Digitiser Cartoon Strip Generator</h1>
+        <table>
+          <tr>
+            <td width="60" align="center">
+              <font face="courier"><a href="default.html">Home</a></font>
+            </td>
+            <td width="60" align="center">
+              <font face="courier"><a href="input.html">Create</a></font>
+            </td>
+            <td width="60" align="center">
+              <font face="courier"><a href="faq.html">FAQ</a></font>
+            </td>
+            <td width="60" align="center">
+              <font face="courier"
+                ><a href="characters.asp">Characters</a></font
+              >
+            </td>
+            <td width="60" align="center">
+              <font face="courier"><a href="links.html">Links</a></font>
+            </td>
+          </tr>
+        </table>
+        <br /><br /><br />
 
-// Helper function to safely serve files with timeout
+        <table width="70%" align="center" rules="ROWS" border="1">
+          <tr>
+            <td valign="bottom">
+              <center>
+                <font color="00ffff" face="courier">\${texta}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxa}</center>
+            </td>
+            <td valign="bottom">
+              <center>
+                <font color="yellow" face="courier">\${textb}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxb}</center>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom">
+              <center>
+                <font color="00ffff" face="courier">\${textc}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxc}</center>
+            </td>
+            <td valign="bottom">
+              <center>
+                <font color="yellow" face="courier">\${textd}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxd}</center>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom">
+              <center>
+                <font color="00ffff" face="courier">\${texte}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxe}</center>
+            </td>
+            <td valign="bottom">
+              <center>
+                <font color="yellow" face="courier">\${textf}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxf}</center>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom">
+              <center>
+                <font color="00ffff" face="courier">\${textg}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxg}</center>
+            </td>
+            <td valign="bottom">
+              <center>
+                <font color="yellow" face="courier">\${texth}<br /> </font>
+              </center>
+              <br />
+              <center>\${boxh}</center>
+            </td>
+          </tr>
+        </table>
+
+        <font face="courier" color="yellow">
+          <br /><br />To link to this cartoon copy and paste the address below:
+          <br /><br />
+
+          <a
+            href="{{OUTPUT_URL}}"
+            >{{OUTPUT_URL}}</a
+          >
+        </font>
+      </center>
+    </font>
+  </body>
+</html>`;
+
+// Helper function to get template
 function getTemplate() {
-  const templatePath = path.join(process.cwd(), 'views', 'output.html');
-  return fs.readFileSync(templatePath, 'utf8');
+  return TEMPLATE;
 }
 
 // Helper function to sanitize HTML content
