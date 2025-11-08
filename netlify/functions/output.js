@@ -237,7 +237,10 @@ exports.handler = async (event, context) => {
 
     // Generate current URL with query parameters
     const queryString = new URLSearchParams(params).toString();
-    const currentUrl = `${event.headers.host ? '//' + event.headers.host : ''}/output.asp${queryString ? '?' + queryString : ''}`;
+    // Get host from headers (Netlify provides host in different headers)
+    const host = event.headers.host || event.headers['x-forwarded-host'] || '';
+    const protocol = event.headers['x-forwarded-proto'] || 'https';
+    const currentUrl = host ? `${protocol}://${host}/output.asp${queryString ? '?' + queryString : ''}` : `/output.asp${queryString ? '?' + queryString : ''}`;
 
     // Sanitize and validate text inputs with strict validation
     const texta = sanitizeTextInput(params.texta);
@@ -278,8 +281,8 @@ exports.handler = async (event, context) => {
     content = content.replace('${boxg}', boxg);
     content = content.replace('${boxh}', boxh);
 
-    // Replace the hardcoded URL with the current dynamic URL
-    content = content.replace('{{OUTPUT_URL}}', currentUrl);
+    // Replace the hardcoded URL with the current dynamic URL (replace all occurrences)
+    content = content.replace(/\{\{OUTPUT_URL\}\}/g, currentUrl);
 
     // Final XSS protection scan on the complete content
     content = sanitizeTemplateContent(content);
