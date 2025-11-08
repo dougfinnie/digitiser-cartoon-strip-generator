@@ -128,7 +128,7 @@ exports.handler = async (event, context) => {
 
     // Generate current URL with query parameters
     const queryString = new URLSearchParams(params).toString();
-    const currentUrl = `${event.headers.host ? 'https://' + event.headers.host : ''}/.netlify/functions/output${queryString ? '?' + queryString : ''}`;
+    const currentUrl = `${event.headers.host ? '//' + event.headers.host : ''}/.netlify/functions/output${queryString ? '?' + queryString : ''}`;
 
     // Sanitize and validate text inputs with strict validation
     const texta = sanitizeTextInput(params.texta);
