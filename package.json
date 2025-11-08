@@ -1,5 +1,5 @@
 {
-  "name": "Digi Comic generator",
+  "name": "digi-comic-generator",
   "version": "0.0.1",
   "description": "Digi Comic generator",
   "main": "server.js",
